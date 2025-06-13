@@ -11,9 +11,8 @@ body {
     background-color: #8a51fc;
 }
 
-.logo {
+.moedas {
     width: 300px;
-    height: 300px;
     display: block;
     margin: 20px auto;
     
@@ -25,6 +24,5 @@ main {
     border-radius: 20px;
     margin: 0 auto;
     padding: 20px;
-
+    
 }
-
