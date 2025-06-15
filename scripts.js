@@ -1,7 +1,7 @@
 const convertButton = document.querySelector(".convert-Button");
 
 function convertvalue() {
-    console.log("funcionou");
-}
+    const inputValue = document.querySelector(".input-value").value;
+    console.log(inputValue);
    
 convertButton.addEventListener("click", convertvalue ) 
