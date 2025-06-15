@@ -100,7 +100,7 @@ section{
     font-size: 16px;
     color: #777777;
 }
-.moeda-valor{
+.moeda-valor, .moeda-valor-converter{
     font-weight: 700;
     font-size: 20px;
     color: #555555;
