@@ -22,8 +22,12 @@ main {
     width: 375px;
     background: #F4F4F4;
     border-radius: 20px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     padding: 44px 24px 23px;
+    display: flex;
+    flex-direction: column;
+    
+
 }
 
 label {
@@ -85,9 +89,19 @@ section{
 }
 
 .resultado{
-    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
+    gap: 4px;    
+}
+
+.moeda-nome {
+    font-weight: 00;
+    font-size: 16px;
+    color: #777777;
+}
+.moeda-valor{
+    font-weight: 700;
+    font-size: 20px;
+    color: #555555;
 }
