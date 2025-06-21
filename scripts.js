@@ -1,17 +1,29 @@
 const convertButton = document.querySelector(".convert-Button");
-const selectMoeda = document.querySelector(".select-moeda");
+const selectMoeda = document.querySelector(".select-moeda"); // moeda selecionada
+const selectFrom = document.querySelector(".select-from"); // moeda de origem
+const selectTo = document.querySelector(".select-to");
 
 
 function convertvalue() {
     const inputValue = document.querySelector(".input-value").value;
     const moedavalorconverter = document.querySelector(".moeda-valor-converter"); //valor em real
     const moedavalorConvertido = document.querySelector(".moeda-valor"); //outros valores
-   
-    const brasiltoday = 1; // Taxa de conversão do Real para Real (1:1)
-    const dolarToday = 5.2;
-    const euroToday = 6.2;
-    const bitcoinToday = 200000; // Exemplo de taxa de conversão para Bitcoin
-    const libraToday = 7.2; // Exemplo de taxa de conversão para Libra
+
+    const rates = {
+        BRL: 1,
+        USD: 5.2,
+        EUR: 6.2,
+        GBP: 7.2,
+        BTC: 200000
+    };
+
+    const locales = {
+        BRL: { locale: "pt-BR", currency: "BRL" },
+        USD: { locale: "en-US", currency: "USD" },
+        EUR: { locale: "de-DE", currency: "EUR" },
+        GBP: { locale: "en-GB", currency: "GBP" },
+        BTC: { locale: "en-US", currency: "BTC" }
+    };
 
     if (selectMoeda.value === "dolar") {
 
@@ -46,13 +58,13 @@ function convertvalue() {
 
     }
 
-    
+
     moedavalorconverter.innerHTML = new Intl.NumberFormat("en-US", { // Formato brasileiro
         style: "currency",
         currency: "BRL"
     }).format(inputValue);
 
-   
+
 }
 
 function changemoeda() {
@@ -86,36 +98,6 @@ function changemoeda() {
     }
 }
 
-
-
-selectMoeda.addEventListener("change", changemoeda);
-convertButton.addEventListener("click", convertvalue);
-// primeira coisa que o usuario vai fazer é clicar no botao de converter, entao vamos adicionar o evento de click no botao//
-
-
-
-
-//alteração novo
-// Selecionando os elementos do DOM;
-const selectFrom = document.querySelector(".select-from"); // moeda de origem
-const selectTo = document.querySelector(".select-to");     // moeda de destino
-
-const rates = {
-    BRL: 1,
-    USD: 5.2,
-    EUR: 6.2,
-    GBP: 7.2,
-    BTC: 200000
-};
-
-const locales = {
-    BRL: { locale: "pt-BR", currency: "BRL" },
-    USD: { locale: "en-US", currency: "USD" },
-    EUR: { locale: "de-DE", currency: "EUR" },
-    GBP: { locale: "en-GB", currency: "GBP" },
-    BTC: { locale: "en-US", currency: "BTC" }
-};
-
 function convertvalue() {
     const inputValue = parseFloat(document.querySelector(".input-value").value);
     const moedavalorconverter = document.querySelector(".moeda-valor-converter");
@@ -125,21 +107,38 @@ function convertvalue() {
     const to = selectTo.value;
 
     // Converter para Real, depois para a moeda de destino
-    const valueInBRL = inputValue * rates[from];
-    const convertedValue = valueInBRL / rates[to];
+    const valueInBRL = inputValue * rates[USD];
+    const convertedValue = valueInBRL / rates[BRL];
+    const BRL = locales[BRL];
+    const USD = locales[USD];
+    const EUR = locales[EUR];
+    const GBP = locales[GBP];
+    const BTC = locales[BTC];
+    const locale = locales[to].locale;
+    
 
-    moedavalorConvertido.innerHTML = new Intl.NumberFormat(locales[to].locale, {
+    moedavalorConvertido.innerHTML = new Intl.NumberFormat(BRL.locale, {
         style: "currency",
-        currency: locales[to].currency
+        currency: BRL
     }).format(convertedValue);
 
-    moedavalorconverter.innerHTML = new Intl.NumberFormat(locales[from].locale, {
+    moedavalorconverter.innerHTML = new Intl.NumberFormat(BRL.locale, {
         style: "currency",
-        currency: locales[from].currency
+        currency: BRL
     }).format(inputValue);
 }
 
 convertButton.addEventListener("click", convertvalue);
+selectMoeda.addEventListener("change", changemoeda);
+
+// primeira coisa que o usuario vai fazer é clicar no botao de converter, entao vamos adicionar o evento de click no botao//
+
+
+
+
+
+
+
 
 
 

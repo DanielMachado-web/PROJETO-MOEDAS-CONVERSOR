@@ -83,6 +83,13 @@ section{
     align-items: center;
 }
 
+.resultado-titulo {
+    font-weight: 700;
+    font-size: 20px;
+    color: #772FD3;
+    margin-bottom: 20px;
+}
+
 .seta-img {
     
     margin: 15px 0px;
