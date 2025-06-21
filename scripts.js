@@ -117,14 +117,14 @@ function convertvalue() {
     const locale = locales[to].locale;
     
 
-    moedavalorConvertido.innerHTML = new Intl.NumberFormat(BRL.locale, {
+    moedavalorConvertido.innerHTML = new Intl.NumberFormat("BRL".locale, {
         style: "currency",
-        currency: BRL
+        currency: "BRL"
     }).format(convertedValue);
 
-    moedavalorconverter.innerHTML = new Intl.NumberFormat(BRL.locale, {
+    moedavalorconverter.innerHTML = new Intl.NumberFormat("USD".locale, {
         style: "currency",
-        currency: BRL
+        currency: "USD"
     }).format(inputValue);
 }
 
