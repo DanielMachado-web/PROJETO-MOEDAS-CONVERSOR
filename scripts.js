@@ -10,6 +10,8 @@ function convertvalue() {
 
     const dolarToday = 5.2;
     const euroToday = 6.2;
+    const bitcoinToday = 200000; // Exemplo de taxa de conversão para Bitcoin
+    const libraToday = 7.2; // Exemplo de taxa de conversão para Libra
 
     if (selectMoeda.value === "dolar") {
 
@@ -44,6 +46,7 @@ function convertvalue() {
 
     }
 
+    
     moedavalorconverter.innerHTML = new Intl.NumberFormat("pt-BR", { // Formato brasileiro
         style: "currency",
         currency: "BRL"
