@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
     <title>Conversor de Moedas</title>
+
 </head>
 
 <body>
@@ -20,29 +23,32 @@
 
     <main>
         <label>
+
             Converter <b>de</b> Moedas
-            <select class=".select-from">
 
-                <option value="Real">R$ Real Brasileiro </option>
-                <option value="dolar">US$ Dólar Americano</option>
-                <option value="euro">€ Euro</option>
-                <option value="libra">£ Libra Esterlina</option>
-                <option value="bitcoin">₿ Bitcoin</option>
-
+            <select class=".select-moeda">
+                <div class="select-from">
+                    <option value="Real">R$ Real Brasileiro</option>
+                    <option value="dolar">US$ Dólar Americano</option>
+                    <option value="euro">€ Euro</option>
+                    <option value="libra">£ Libra Esterlina</option>
+                    <option value="bitcoin">₿ Bitcoin</option>
+                </div>
             </select>
         </label>
 
 
         <label>
             converter <b>para</b> Moedas
-            <select class="select-to">
-                <option value="real">R$ Real Brasileiro</option>
-                <option value="dolar">US$ Dólar Americano</option>
-                <option value="euro">€ Euro</option>
-                <option value="libra">£ Libra Esterlina</option>
-                <option value="bitcoin">₿ Bitcoin</option>
 
-
+            <select class="select-moeda">
+                <div class="select-to">
+                    <option value="real">R$ Real Brasileiro</option>
+                    <option value="dolar">US$ Dólar Americano</option>
+                    <option value="euro">€ Euro</option>
+                    <option value="libra">£ Libra Esterlina</option>
+                    <option value="bitcoin">₿ Bitcoin</option>
+                </div>
             </select>
         </label>
 
@@ -55,6 +61,7 @@
         <button class="convert-Button">Converter</button>
 
         <section>
+
             <h2 class="resultado-titulo">Resultado da Conversão</h2>
 
 
@@ -62,7 +69,6 @@
                 <img src="./assets/real.png" alt="logo-moeda-a-converter" class="moeda">
                 <p class="moeda-nome">Real</p>
                 <p class="moeda-valor">R$ 1,00</p>
-
             </div>
 
 
@@ -89,22 +95,21 @@
                 <img src="./assets/libra.png" alt="logo-moeda-a-convertida" class="moeda-img">
                 <p class="moeda-nome" id="moeda-americano">Libra Esterlina</p>
                 <p class="moeda-valor">£ 1.500,00</p>
+            </div>
 
-                <img class="seta-img" src="./assets/setaprabaixo.png" alt="seta de conversão">
+            <img class="seta-img" src="./assets/setaprabaixo.png" alt="seta de conversão">
 
-                <div class="resultado">
-                    <img src="./assets/bitcoin.png" alt="logo-moeda-a-convertida" class="moeda-img">
-                    <p class="moeda-nome" id="moeda-americano">Bitcoin</p>
-                    <p class="moeda-valor">₿ 0,0001</p>
-
-
+            <div class="resultado">
+                <img src="./assets/bitcoin.png" alt="logo-moeda-a-convertida" class="moeda-img">
+                <p class="moeda-nome" id="moeda-americano">Bitcoin</p>
+                <p class="moeda-valor">₿ 0,0001</p>
+            </div>
 
         </section>
-
-
-    </main>
-
+    </main>    
 </body>
+
+
 <script src="./scripts.js"></script>
 
 </html>
