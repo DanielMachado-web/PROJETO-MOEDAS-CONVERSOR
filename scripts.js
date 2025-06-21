@@ -28,6 +28,22 @@ function convertvalue() {
 
     }
 
+    if (selectMoeda.value == "libra") {
+        moedavalorConvertido.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputValue / 7.2); // Exemplo de taxa de conversão para Libra
+
+    }
+
+    if (selectMoeda.value == "bitcoin") {
+        moedavalorConvertido.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValue / 200000); // Exemplo de taxa de conversão para Bitcoin
+
+    }
+
     moedavalorconverter.innerHTML = new Intl.NumberFormat("pt-BR", { // Formato brasileiro
         style: "currency",
         currency: "BRL"
